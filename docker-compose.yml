@@ -1,0 +1,62 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: sammy
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: php-pure
+    container_name: php-pure-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - php-pure
+
+  db:
+    image: mysql:8.0
+    container_name: php-pure-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - php-pure
+
+  nginx:
+    image: nginx:alpine
+    container_name: php-pure-nginx
+    restart: unless-stopped
+    ports:
+      - 8009:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - php-pure
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.1
+    container_name: php-pure-phpmyadmin
+    links:
+      - db
+    environment:
+        PMA_HOST: db
+        PMA_PORT: 3306
+    ports:
+        - 8081:80
+    networks:
+        - php-pure
+
+networks:
+  php-pure:
+    driver: bridge
