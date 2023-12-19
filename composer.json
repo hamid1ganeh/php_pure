@@ -3,7 +3,8 @@
         "pecee/simple-router": "5.4.1.7",
         "vlucas/phpdotenv": "^5.6",
         "requtize/query-builder": "dev-master",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "rakit/validation": "^1.4"
     },
     "authors": [
         {

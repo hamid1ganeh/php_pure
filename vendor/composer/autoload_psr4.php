@@ -10,6 +10,7 @@ return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Requtize\\QueryBuilder\\' => array($vendorDir . '/requtize/query-builder/src/QueryBuilder'),
+    'Rakit\\Validation\\' => array($vendorDir . '/rakit/validation/src'),
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
     'Pecee\\' => array($vendorDir . '/pecee/simple-router/src/Pecee'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),

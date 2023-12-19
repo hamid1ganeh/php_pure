@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Repositories\TestRepository;
 use Core\Database\Connection;
+use Rakit\Validation\Validator;
 
 class TestController
 {
@@ -24,13 +25,25 @@ class TestController
 
     public function create()
     {
-        return csrf_token();
         return view("test.create");
     }
 
     public function store()
     {
-       
-        return input('csrf_token'); 
+        $validator = new Validator;
+        $validation = $validator->validate($_POST + $_FILES,[
+            'title'                  => 'required']);
+        
+        if ($validation->fails()) 
+        {
+            $errors = $validation->errors();
+            return view("test.create",["errors"=>$errors->firstOfAll()]);
+        }
+         else 
+        {
+            // validation passes
+            echo "Success!";
+        }
+     
     }
 }

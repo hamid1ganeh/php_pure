@@ -24,6 +24,7 @@ class ComposerStaticInit81a8c97a0e5abf0abb462913f4bef7b5
         'R' => 
         array (
             'Requtize\\QueryBuilder\\' => 22,
+            'Rakit\\Validation\\' => 17,
         ),
         'P' => 
         array (
@@ -64,6 +65,10 @@ class ComposerStaticInit81a8c97a0e5abf0abb462913f4bef7b5
         'Requtize\\QueryBuilder\\' => 
         array (
             0 => __DIR__ . '/..' . '/requtize/query-builder/src/QueryBuilder',
+        ),
+        'Rakit\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rakit/validation/src',
         ),
         'PhpOption\\' => 
         array (
