@@ -20,6 +20,17 @@ class TestController
         return view("test.index",['name'=>$name,
                                   'books'=>$books,
                                   'freinds'=>$freinds]);
+    }
 
+    public function create()
+    {
+        return csrf_token();
+        return view("test.create");
+    }
+
+    public function store()
+    {
+       
+        return input('csrf_token'); 
     }
 }

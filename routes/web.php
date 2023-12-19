@@ -5,15 +5,15 @@
  use Pecee\SimpleRouter\SimpleRouter as Route;
 
  Route::setDefaultNamespace('App\Http\Controllers');
-  
 
-//  Route::get('/', function () {
-//     return "Hamid1ganeh2st";
-// });
 
-Route::get('/', 'TestController@index')->name('home');
+ Route::group(['prefix' => '/test','name' => 'test.'],function () {
+    Route::get('/', 'TestController@index')->name('home');
+    Route::get('/create', 'TestController@create')->name('create');
+    Route::post('/store', 'TestController@store')->name('store');
+});
+
 
  
-
 
 Route::start();

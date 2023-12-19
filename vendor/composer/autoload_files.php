@@ -10,4 +10,5 @@ return array(
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
     'a4a119a56e50fbb293281d9a48007e0e' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
     '5ec26a44593cffc3089bdca7ce7a56c3' => $baseDir . '/core/helpers.php',
+    '12a1d99f361a65cd2c2fe9e6d108e5d6' => $baseDir . '/core/Request.php',
 );
