@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Repositories\TestRepository;
 use Core\Database\Connection;
 use Rakit\Validation\Validator;
+use Pecee\SimpleRouter\SimpleRouter as Router;
 
 class TestController
 {

@@ -5,7 +5,7 @@
 </head>
 
 <body>
-  <?php
+<?php
 if(!empty($_GET['errors']))
 {
   echo "<ul>";
@@ -20,7 +20,7 @@ if(!empty($_GET['errors']))
   <label for="title">Title:</label><br>
   <input type="text" id="title" name="title">
   <br><br>
-  <input type="text" name="csrf_token" value="<?= csrf_token(); ?>">
+  <input type="hidden" name="csrf_token" value="<?= csrf_token(); ?>">
   <input type="submit" value="Submit">
 </form> 
 </body>

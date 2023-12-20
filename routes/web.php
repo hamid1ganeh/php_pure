@@ -13,7 +13,7 @@
     Route::post('/store', 'TestController@store')->name('store');
 });
 
-
+Route::csrfVerifier(new \App\Http\Middlewares\CsrfVerifier);
  
 
 Route::start();
