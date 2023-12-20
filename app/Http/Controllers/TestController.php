@@ -37,7 +37,7 @@ class TestController
         if ($validation->fails()) 
         {
             $errors = $validation->errors();
-            return view("test.create",["errors"=>$errors->firstOfAll()]);
+            return redirect('/test/create?errors='.json_encode($errors->firstOfAll()));
         }
          else 
         {

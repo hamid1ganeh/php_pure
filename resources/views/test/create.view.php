@@ -6,16 +6,15 @@
 
 <body>
   <?php
-if(!empty($errors))
+if(!empty($_GET['errors']))
 {
   echo "<ul>";
-  foreach($errors as $error)
+  foreach(json_decode($_GET['errors']) as $error)
   {
      echo "<li>".$error."</li>";
   }
   echo "</ul>";
 }
-
 ?>
 <form action="/test/store" method="post">
   <label for="title">Title:</label><br>
